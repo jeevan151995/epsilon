@@ -1,0 +1,43 @@
+   
+        .sortorder:after {
+            content: '\25b2';
+			color: #0063E6;
+        } 
+        .sortorder.descending:after {
+            content: '\25bc';
+			color: #0063E6;
+        }
+	
+	.list2 span:hover {
+background-color:blue;
+}
+	
+	
+		
+	thead { color: #666666;
+  font-family: 'Source Sans Pro';
+  font-size: 14px;
+  font-weight: bold;
+  padding:24px;
+  }	
+	thead td { 
+  padding : 14px 24px 13px 24px !important;
+  
+  }		
+tbody { color: #666666;
+  font-family: 'Source Sans Pro';
+  font-size: 14px;
+   padding : 0 24px 0 24px !important;
+  }	
+tbody td { 
+  padding : 14px 24px 13px 24px !important;
+  
+  }	
+				
+ tr:nth-child(even) td, tbody tr.even td {background:#ffffff;}
+ tr:nth-child(odd) td, tbody tr.odd td {background:#f7f7f7;}	
+	
+.list1 tr:hover td{
+background-color:#f0f6ff;
+}
+	

@@ -1,0 +1,51 @@
+.card {
+
+width:290px;
+  
+}
+.dogc
+{
+height: 290px;
+width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    outline-offset: 0 3px;
+
+  
+}
+
+.container {
+    padding: 5px 0px 1px 16px;
+	height:100%;
+
+}
+.source
+{
+ font-family: 'Source Sans Pro';
+ 
+}
+.c1
+
+{
+	font-size: 15px;
+	color: #0F5EF0;
+	font-weight: 600;
+}
+.c2
+
+{
+	font-size: 12px;
+	color: #7A8594;
+	font-weight: bold;
+	margin-top:3px;
+}
+.c3
+
+{
+	font-size: 12px;
+	color: #7A8594;
+	font-weight: regular;
+	Padding-top:5px;
+}

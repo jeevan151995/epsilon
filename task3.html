@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title></title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="main3.css">
+   
+</head>
+<body>
+    <div class="container" ng-app="cookiesapp" ng-controller="cookiesController">
+        <table class="table table-bordered table-striped table-hover ">
+            <thead class="list2">
+                <tr>
+                   
+                    <td ng-click="sort('name')">Product Name
+<span class="sortorder descending cc" ng-hide="(sortKey=='name' && reverse==true)"></span>
+<span class="sortorder cc" ng-hide="(sortKey=='name' && reverse==false)"></span>
+
+                    </td>
+                    <td ng-click="sort('price')">Price
+ <span class="sortorder descending" ng-hide="(sortKey=='price' && reverse==true)"></span>
+<span class="sortorder" ng-hide="(sortKey=='price' && reverse==false)"></span>
+                    </td>
+                    <td ng-click="sort('Category')">Category
+<span class="sortorder descending" ng-hide="(sortKey=='category' && reverse==true)"></span>
+<span class="sortorder" ng-hide="(sortKey=='category' && reverse==false)"></span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody class="list1">
+                <tr ng-repeat="cookies in cookiesList | orderBy: sortKey:reverse">
+                    
+                    <td>{{ cookies.name }}</td>
+                    <td>{{ cookies.price }}</td>
+                    <td>{{ cookies.category }}</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <script>
+        var cookiesapp = angular.module("cookiesapp", []);
+        cookiesapp.controller('cookiesController', function ($scope) {
+            $scope.cookiesList = [
+            { "name": "Chocolate Chip", "price": "$2.49", "category": "Standard" },
+    { "name": "Sugar", "price": "$1.79", "category": "Standard" },
+    { "name": "Snickerdoodle", "price": "$2.49", "category": "Standard" },
+    { "name": "Oatmeal Raisin", "price": "$2.99", "category": "Standard" },
+    { "name": "Peanut Butter", "price": "$2.99", "category": "Standard" },
+    { "name": "White Chocolate Macadamia", "price": "$3.99", "category": "Premium" },
+    { "name": "Red Velvet", "price": "$3.49", "category": "Premium" },
+    { "name": "Black and White", "price": "$3.49", "category": "Premium" },
+    { "name": "Triple Chocolate", "price": "$3.99", "category": "Premium" },
+    { "name": "White Chocolate Coconut Divine", "price": "$5.99", "category": "Signature" },
+    { "name": "Dark Chocolate Pistachio Sea Salt", "price": "$5.49", "category": "Signature" },
+    { "name": "Brown Butter Bourbon Spice", "price": "$5.49", "category": "Signature" },
+    { "name": "Bacon Chocolate Chip", "price": "$5.99", "category": "Signature" }
+			
+            ];
+            $scope.reverse = false;
+            $scope.sortKey = 'title';
+
+            $scope.sort = function (keyname) {
+                $scope.sortKey = keyname;
+                $scope.reverse = !$scope.reverse;
+            } 
+        });
+    </script>
+</body>
+</html>
